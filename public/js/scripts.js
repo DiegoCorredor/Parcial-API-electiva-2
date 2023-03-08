@@ -33,50 +33,49 @@ function buscarDetalles(id) {
     fetch(`https://starwars-developuptc.vercel.app/${idElement}`)
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
-            dataJson = JSON.stringify(data)
-            console.log(dataJson.name)
-            if (idElement == dataJson._id) {
-                alert(idElement)
+            //console.log(data)
+            //console.log(data.data.name)
+            if (idElement == data.data._id) {
+                //alert(idElement)
                 const tr = document.createElement('tr')
                 const colName = document.createElement('td')
-                colName.appendChild(document.createTextNode(dataJson.name))
+                colName.appendChild(document.createTextNode(data.data.name))
                 tr.appendChild(colName)
 
                 const height = document.createElement('td')
-                height.appendChild(document.createTextNode(data.height))
+                height.appendChild(document.createTextNode(data.data.height))
                 tr.appendChild(height)
 
                 const mass = document.createElement('td')
-                mass.appendChild(document.createTextNode(data.mass))
+                mass.appendChild(document.createTextNode(data.data.mass))
                 tr.appendChild(mass)
 
                 const hair_color = document.createElement('td')
-                hair_color.appendChild(document.createTextNode(data.hair_color))
+                hair_color.appendChild(document.createTextNode(data.data.hair_color))
                 tr.appendChild(hair_color)
 
                 const skin_color = document.createElement('td')
-                skin_color.appendChild(document.createTextNode(data.skin_color))
+                skin_color.appendChild(document.createTextNode(data.data.skin_color))
                 tr.appendChild(skin_color)
 
                 const eye_color = document.createElement('td')
-                eye_color.appendChild(document.createTextNode(data.eye_color))
+                eye_color.appendChild(document.createTextNode(data.data.eye_color))
                 tr.appendChild(eye_color)
 
                 const birth_year = document.createElement('td')
-                birth_year.appendChild(document.createTextNode(data.birth_year))
+                birth_year.appendChild(document.createTextNode(data.data.birth_year))
                 tr.appendChild(birth_year)
 
                 const gender = document.createElement('td')
-                gender.appendChild(document.createTextNode(data.gender))
+                gender.appendChild(document.createTextNode(data.data.gender))
                 tr.appendChild(gender)
 
                 const homeworld = document.createElement('td')
-                homeworld.appendChild(document.createTextNode(data.homeworld))
+                homeworld.appendChild(document.createTextNode(data.data.homeworld))
                 tr.appendChild(homeworld)
 
                 const species = document.createElement('td')
-                species.appendChild(document.createTextNode(data.species))
+                species.appendChild(document.createTextNode(data.data.species))
                 tr.appendChild(species)
 
                 tbody2.appendChild(tr)
