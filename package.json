@@ -1,0 +1,20 @@
+{
+  "name": "parcial-2",
+  "version": "1.0.0",
+  "description": "Consumo de API de Starwars para el parcial de 1 50% electiva 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
+  },
+  "author": "Diego Alejandro Corredor Rojas",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
