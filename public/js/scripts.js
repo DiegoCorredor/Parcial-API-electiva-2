@@ -22,6 +22,36 @@ fetch('https://starwars-developuptc.vercel.app/')
             select2.appendChild(option)
         })
 
+        data.data.forEach(element => {
+            const tr = document.createElement('tr')
+            const colName = document.createElement('td')
+            colName.appendChild(document.createTextNode(element.name))
+            tr.appendChild(colName)
+
+            const gender = document.createElement('td')
+            gender.appendChild(document.createTextNode(element.gender))
+            tr.appendChild(gender)
+
+            const homeworld = document.createElement('td')
+            homeworld.appendChild(document.createTextNode(element.homeworld))
+            tr.appendChild(homeworld)
+
+            const species = document.createElement('td')
+            species.appendChild(document.createTextNode(element.species))
+            tr.appendChild(species)
+
+            const btn = document.createElement('button')
+            btn.appendChild(document.createTextNode('Ver a detalle'))
+            tr.appendChild(btn)
+
+            btn.onclick = () => {
+                //Crear la tabla secundaria de detalles
+                buscarDetalles(element._id)
+            }
+
+            tbody.appendChild(tr)
+        })
+
     })
     .catch(error => console.log(error))
 
@@ -35,6 +65,7 @@ function buscarDetalles(id) {
         .then(data => {
             //console.log(data)
             //console.log(data.data.name)
+            tbody2.innerHTML = ''
             if (idElement == data.data._id) {
                 //alert(idElement)
                 const tr = document.createElement('tr')
@@ -81,7 +112,7 @@ function buscarDetalles(id) {
                 tbody2.appendChild(tr)
             }
         })
-        .catch (error => console.log(error))
+        .catch(error => console.log(error))
 }
 
 function actualizarTabla() {
@@ -116,6 +147,7 @@ function actualizarTabla() {
                     const btn = document.createElement('button')
                     btn.appendChild(document.createTextNode('Ver a detalle'))
                     tr.appendChild(btn)
+
 
                     btn.onclick = () => {
                         //Crear la tabla secundaria de detalles
